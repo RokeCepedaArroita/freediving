@@ -88,7 +88,7 @@ def plot_buoyancy_force_kgf(params):
 
     # Create gradient shading for the ocean below the wavy surface
     gradient_depths = np.linspace(0, params["y_limits"][0], 500)  # Depth levels for gradient
-    gradient_colors = plt.cm.Blues(np.linspace(0.15, 0.95, len(gradient_depths)))  # Gradient colors
+    gradient_colors = plt.cm.Blues(np.linspace(0.2, 0.95, len(gradient_depths)))  # Gradient colors
 
     # Plot gradient shading
     for i in range(len(gradient_depths) - 1):
