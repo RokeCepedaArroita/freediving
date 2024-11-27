@@ -2,6 +2,24 @@
 
 This repository contains a Python script to calculate and visualize the buoyancy forces acting on a freediver as a function of depth. The tool allows for the optimization of lead weights to achieve a target freefall depth, considering the diver's physiological parameters, equipment, and water conditions.
 
+---
+
+## Example Visualization
+
+The program generates a plot of net force (kgf) vs. depth (m), illustrating:
+- **Lines**: Net forces for full, medium, and empty lung volumes.
+- **Shaded Areas**:
+  - Gradient blue: Ocean depth below the surface.
+  - Red: Freefall region where net force is negative.
+
+![Example Result](example_result.png)
+
+- **Axes**:
+  - **X-axis**: Net buoyant force (kgf).
+  - **Y-axis**: Depth (m), increasing downward.
+
+---
+
 ## Problem Statement
 
 The program models the forces affecting a freediver as they descend underwater. Key objectives include:
@@ -30,6 +48,8 @@ The program requires the following inputs:
 - **Water Properties**:
   - `water_type`: "sea" or "fresh" (determines salinity).
   - `temperature` (\(T\)): Water temperature in °C.
+
+---
 
 ### Physics Model
 The net buoyant force on the diver is calculated as:
@@ -69,25 +89,10 @@ Water density (\(\rho_w\)) is estimated based on salinity (\(S\)) and temperatur
 
 ---
 
-## Example Visualization
-
-The program generates a plot of net force (kgf) vs. depth (m), illustrating:
-- **Lines**: Net forces for full, medium, and empty lung volumes.
-- **Shaded Areas**:
-  - Gradient blue: Ocean depth below the surface.
-  - Red: Freefall region where net force is negative.
-
-![Example Result](example_result.png)
-
-- **Axes**:
-  - X-axis: Net buoyant force (kgf).
-  - Y-axis: Depth (m), increasing downward.
-
----
-
 ## Usage
 
 1. Adjust the parameters in the `params` dictionary as needed.
 2. Run the script to generate a customized plot:
    ```bash
    python freediving.py
+   ```
