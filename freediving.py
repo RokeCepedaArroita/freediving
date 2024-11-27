@@ -125,8 +125,8 @@ def plot_buoyancy_force_kgf(params):
     plt.grid()
     plt.xlim(x_limits)
     plt.ylim(y_limits)
-    plt.savefig("example_result.pdf", dpi=400)
-    plt.savefig("example_result.png", dpi=400)
+    plt.savefig("example_result.pdf", dpi=400, bbox_inches="tight")
+    plt.savefig("example_result.png", dpi=400, bbox_inches="tight")
     plt.show()
 
 
