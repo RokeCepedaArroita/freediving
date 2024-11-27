@@ -56,8 +56,8 @@ def plot_buoyancy_force_kgf(params):
                 weight_volume = params["lead_weight"] / 11340  # Volume of lead in m^3
 
                 total_displacement_volume = (
-                    volume_fat / (1 + d * 0.0005)
-                    + volume_lean / (1 + d * 0.0004)
+                    volume_fat / (1 + d * 0.1/100)
+                    + volume_lean / (1 + d * 0.05/100)
                     + lung_volume_at_depth
                     + wetsuit_volume_at_depth
                     + snorkel_volume

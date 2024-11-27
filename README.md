@@ -95,8 +95,8 @@ This script makes several assumptions and approximations to simplify the modelin
 
 - **Body Compressibility**  
   - The compressibility of body tissues is modeled as:  
-    - Fat: Decreases in volume by **0.05% per meter of depth**.  
-    - Lean tissue: Decreases in volume by **0.04% per meter of depth**.  
+    - Fat: Decreases in volume by **0.1% per meter of depth**.  
+    - Lean tissue: Decreases in volume by **0.05% per meter of depth**.  
   - These values are approximations based on average tissue properties and may vary between individuals.
 
 - **Water Density**  
