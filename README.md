@@ -10,7 +10,7 @@ The program models the forces affecting a freediver as they descend underwater. 
 1. Determining the depth at which the diver transitions into freefall, where the net buoyant force becomes negative.
 2. Optimizing the lead weight required for a given diver to achieve neutral buoyancy at a desired depth.
 
-Accurate calculations depend on the diver's body composition, lung volumes, wetsuit properties, and water density, which varies with salinity and temperature.
+Accurate calculations depend on the diver's body composition, lung volumes, wetsuit properties, water density, and other compressibility factors, which vary with depth, salinity, and temperature.
 
 ---
 
@@ -64,24 +64,30 @@ where:
 #### Buoyant Volume
 The displacement volume ($V_{\text{disp}}$) considers:
 
-1. **Body Composition**:
-   $$V_{\text{fat}} = \frac{m_d \cdot f}{\rho_{\text{fat}}}, \quad V_{\text{lean}} = \frac{m_d \cdot (1 - f)}{\rho_{\text{lean}}}$$
-   where $\rho_{\text{fat}} = 0.9 \, \text{g/cm}^3$ and $\rho_{\text{lean}} = 1.1 \, \text{g/cm}^3$.
+1. **Body Composition Compressibility**:
+   - **Fat** is less dense ($\rho_{\text{fat}} = 0.9 \, \text{g/cm}^3$) than water and highly incompressible, providing consistent buoyancy.
+   - **Lean Tissue** ($\rho_{\text{lean}} = 1.1 \, \text{g/cm}^3$) is closer to water density and slightly compressible. For depths beyond recreational limits, compression effects can be modeled as:
+     $$V_{\text{lean}}(d) = V_{\text{lean}}(0) / (1 + d \cdot c_{\text{lean}})$$
+     where $c_{\text{lean}} \sim 0.0004$ is a compressibility constant.
 
-2. **Lung Volume at Depth**:
+2. **Lung Volume Compression**:
+   Lungs compress according to Boyle's Law:
    $$V_l(d) = V_r + \frac{V_l - V_r}{1 + \frac{d}{10}}$$
+   where $d$ is depth in meters and $V_r$ is the residual volume, which remains incompressible.
 
 3. **Wetsuit Compression**:
    $$V_w(d) = V_{w, \text{surface}} \cdot (1 - k \cdot d)$$
-   where $k$ is the compressibility factor.
+   where $k$ is the compressibility factor determined by the wetsuit material. Wetsuits lose buoyancy with depth due to the compression of gas bubbles within the neoprene.
 
-4. **Total Volume**:
+4. **Snorkel and Mask Volume**:
+   This volume is static and unaffected by depth.
+
+5. **Total Volume**:
    $$V_{\text{disp}} = V_{\text{fat}} + V_{\text{lean}} + V_l(d) + V_w(d) + V_s - \frac{m_L}{\rho_{\text{lead}}}$$
 
 #### Seawater Density
 Water density ($\rho_w$) is estimated based on salinity ($S$) and temperature ($T$):
 $$\rho_w = 1000 \cdot \left(1 + 0.0008S - 0.0003T\right)$$
-
 
 ---
 
