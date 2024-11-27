@@ -89,6 +89,36 @@ The displacement volume ($V_{\text{disp}}$) considers:
 Water density ($\rho_w$) is estimated based on salinity ($S$) and temperature ($T$):
 $$\rho_w = 1000 \cdot \left(1 + 0.0008S - 0.0003T\right)$$
 
+## Assumptions
+
+This script makes several assumptions and approximations to simplify the modeling of buoyancy forces during freediving. These include:
+
+- **Body Compressibility**  
+  - The compressibility of body tissues is modeled as:  
+    - Fat: Decreases in volume by **0.05% per meter of depth**.  
+    - Lean tissue: Decreases in volume by **0.04% per meter of depth**.  
+  - These values are approximations based on average tissue properties and may vary between individuals.
+
+- **Water Density**  
+  - Seawater density is calculated based on salinity (**35 ppt**) and temperature. Variations with pressure (depth) are assumed negligible for the depths modeled.  
+  - Freshwater density is assumed to be uniform, with salinity set to zero.
+
+- **Gravitational Acceleration**  
+  - All force calculations use a fixed gravitational acceleration of **9.81 m/s²**.
+
+- **Wetsuit Compression**  
+  - The wetsuit volume decreases by **1.6% per meter of depth**, based on empirical data. Variations in material behavior are not modeled but the compressibility can be set in the input parameters.
+
+- **Snorkel and Mask Volume**  
+  - The combined volume of the snorkel and mask is assumed to be **150 cm³**, which remains constant with depth. This is a small simplification.
+
+- **Lung Volume Compression**
+  - Lung volume changes with depth according to Boyle's law, with a residual volume of **1.5 liters (1500 cm³)** retained at all depths.
+
+- **Incompressibility of Water**  
+  - For simplicity, water is treated as incompressible. The effect of pressure on water density is negligible at the modeled depths.
+
+
 ---
 
 ## Usage

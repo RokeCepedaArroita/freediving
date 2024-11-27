@@ -135,7 +135,7 @@ def plot_buoyancy_force_kgf(params):
 params = {
     "mass": 73,  # kg
     "height": 1.84,  # meters (for context only)
-    "body_fat_percentage": 0.23,  # 0.23 is a fudge factor to ensure neutral buoyancy with hot spring water, real ody fat percentage (13-15%), waist 79 cm, neck 36 cm
+    "body_fat_percentage": 0.23,  # 0.23 is a fudge factor to ensure neutral buoyancy with hot spring water, real approximate fat percentage (13-15%) if waist 79 cm, neck 36 cm
     "lung_volumes": {
         "full_lung": 6.5,  # liters
         "medium_lung": 4.0,  # liters
