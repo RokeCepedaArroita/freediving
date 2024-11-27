@@ -22,7 +22,7 @@ The program generates a plot of net force (kgf) vs. depth (m), illustrating:
   - Gradient blue: Ocean depth below the surface.
   - Red: Freefall region where net force is negative.
 
-![Example Result](example_result.png)
+<img src="example_result.png" alt="Example Result" width="600"/>
 
 - **Axes**:
   - X-axis: Net buoyant force (kgf).
