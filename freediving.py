@@ -31,7 +31,7 @@ def plot_buoyancy_force_kgf(params):
         "empty_lung": {"linestyle": ":", "label": f"Empty Lung ({params['lung_volumes']['empty_lung']} L)"},
     }
 
-    plt.figure(figsize=(6, 7))
+    plt.figure(figsize=(6, 6))
     net_force_curves = {}
 
     for condition, lung_volume in params["lung_volumes"].items():
