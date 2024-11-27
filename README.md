@@ -56,9 +56,7 @@ The program requires the following inputs:
 
 ### Physics Model
 The net buoyant force on the diver is calculated as:
-$$
-F_{\text{net}} = F_{\text{buoyancy}} - F_{\text{weight}}
-$$
+$$F_{\text{net}} = F_{\text{buoyancy}} - F_{\text{weight}}$$
 where:
 - $$F_{\text{buoyancy}} = \rho_w V_{\text{disp}} g$$
 - $$F_{\text{weight}} = (m_d + m_w + m_L) g$$
@@ -67,32 +65,22 @@ where:
 The displacement volume ($V_{\text{disp}}$) considers:
 
 1. **Body Composition**:
-   $$
-   V_{\text{fat}} = \frac{m_d \cdot f}{\rho_{\text{fat}}}, \quad V_{\text{lean}} = \frac{m_d \cdot (1 - f)}{\rho_{\text{lean}}}
-   $$
+   $$V_{\text{fat}} = \frac{m_d \cdot f}{\rho_{\text{fat}}}, \quad V_{\text{lean}} = \frac{m_d \cdot (1 - f)}{\rho_{\text{lean}}}$$
    where $\rho_{\text{fat}} = 0.9 \, \text{g/cm}^3$ and $\rho_{\text{lean}} = 1.1 \, \text{g/cm}^3$.
 
 2. **Lung Volume at Depth**:
-   $$
-   V_l(d) = V_r + \frac{V_l - V_r}{1 + \frac{d}{10}}
-   $$
+   $$V_l(d) = V_r + \frac{V_l - V_r}{1 + \frac{d}{10}}$$
 
 3. **Wetsuit Compression**:
-   $$
-   V_w(d) = V_{w, \text{surface}} \cdot (1 - k \cdot d)
-   $$
+   $$V_w(d) = V_{w, \text{surface}} \cdot (1 - k \cdot d)$$
    where $k$ is the compressibility factor.
 
 4. **Total Volume**:
-   $$
-   V_{\text{disp}} = V_{\text{fat}} + V_{\text{lean}} + V_l(d) + V_w(d) + V_s - \frac{m_L}{\rho_{\text{lead}}}
-   $$
+   $$V_{\text{disp}} = V_{\text{fat}} + V_{\text{lean}} + V_l(d) + V_w(d) + V_s - \frac{m_L}{\rho_{\text{lead}}}$$
 
 #### Seawater Density
 Water density ($\rho_w$) is estimated based on salinity ($S$) and temperature ($T$):
-$$
-\rho_w = 1000 \cdot \left(1 + 0.0008S - 0.0003T\right)
-$$
+$$\rho_w = 1000 \cdot \left(1 + 0.0008S - 0.0003T\right)$$
 
 
 ---
