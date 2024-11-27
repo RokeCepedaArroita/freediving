@@ -60,8 +60,8 @@ $$
 F_{\text{net}} = F_{\text{buoyancy}} - F_{\text{weight}}
 $$
 where:
-- $F_{\text{buoyancy}} = \rho_w V_{\text{disp}} g$
-- $F_{\text{weight}} = (m_d + m_w + m_L) g$
+- $$F_{\text{buoyancy}} = \rho_w V_{\text{disp}} g$$
+- $$F_{\text{weight}} = (m_d + m_w + m_L) g$$
 
 #### Buoyant Volume
 The displacement volume ($V_{\text{disp}}$) considers:
@@ -93,6 +93,7 @@ Water density ($\rho_w$) is estimated based on salinity ($S$) and temperature ($
 $$
 \rho_w = 1000 \cdot \left(1 + 0.0008S - 0.0003T\right)
 $$
+
 
 ---
 
