@@ -83,7 +83,7 @@ The displacement volume ($V_{\text{disp}}$) considers:
    This volume is static and unaffected by depth.
 
 5. **Total Volume**:
-   $$V_{\text{disp}} = V_{\text{fat}} + V_{\text{lean}} + V_l(d) + V_w(d) + V_s - \frac{m_L}{\rho_{\text{lead}}}$$
+   $$V_{\text{disp}} = V_{\text{fat}} + V_{\text{lean}} + V_l(d) + V_w(d) + V_s + \frac{m_L}{\rho_{\text{lead}}}$$
 
 #### Seawater Density
 Water density ($\rho_w$) is estimated based on salinity ($S$) and temperature ($T$):
